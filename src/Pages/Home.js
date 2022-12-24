@@ -1,12 +1,17 @@
 import React from "react";
+import ProductsCard from "../components/ProductsCard";
 import { useProducts } from "../context/ProductsContext";
 
 const Home = () => {
-  const { data } = useProducts();
-
+  const {
+    state: { products },
+  } = useProducts();
+  console.log(products);
   return (
     <div>
-      <h1>home page</h1>
+      {products.map((product) => (
+        <ProductsCard product={product} />
+      ))}
     </div>
   );
 };
