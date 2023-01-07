@@ -4,6 +4,7 @@ export const initialState = {
   loading: false,
   products: [],
   error: false,
+  card: [],
 };
 
 export const productReducer = (state, action) => {
@@ -26,6 +27,11 @@ export const productReducer = (state, action) => {
         ...state,
         loading: false,
         error: true,
+      };
+    case productActionType.ADD_TO_CARD:
+      return {
+        ...state,
+        card: [...state.card, action.payload],
       };
     default: {
       return state;

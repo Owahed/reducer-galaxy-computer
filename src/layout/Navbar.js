@@ -12,6 +12,7 @@ const navbar = () => {
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/news">news</Link>
+        <Link to="/card">Card</Link>
         <h2 className="galaxy-computer">Galaxy Computer</h2>
       </div>
     </div>

@@ -1,10 +1,4 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-  useState,
-} from "react";
+import React, { createContext, useContext, useEffect, useReducer } from "react";
 import Products from "../Data/products.json";
 import { productActionType } from "../state/actionType";
 import { initialState, productReducer } from "../state/ProductReducer";
@@ -12,6 +6,7 @@ import { initialState, productReducer } from "../state/ProductReducer";
 const PRODUCTS_CONTEXT = createContext();
 const ProductsContext = ({ children }) => {
   const [state, dispatch] = useReducer(productReducer, initialState);
+  console.log(state);
 
   useEffect(() => {
     dispatch({ type: productActionType.FETCHING_START });
